@@ -19,6 +19,7 @@ form:
         gp-cards-1: Style 1
         gp-cards-2: Style 2
         gp-cards-3: Style 3
+        gp-cards-4: Style 4
       
     headline:
       type: textarea.textarea
