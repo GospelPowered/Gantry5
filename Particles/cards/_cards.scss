@@ -153,3 +153,34 @@
         }
     }
 }
+
+//........................Style 4....................................
+.gp-cards-4 {
+    .gp-cards-container {
+        @include display(flex);
+        @include flex-flow(row wrap);
+        justify-content: center;
+    }
+    
+    .gp-cards-item {
+        text-align: center;
+        padding: 1rem;
+        margin: 10px;
+        border: 4px solid #ddd;
+        border-radius: 3px;
+        flex-grow: 1;
+        transition: all .2s;
+        flex: 30%;
+        justify-content: space-between;
+        
+        &:hover {
+            background: $accent-color-2;
+            border-color: $accent-color-2;
+            color: $white;
+            
+            h2 {
+                color: $white !important;
+            }
+        }
+    }
+}
