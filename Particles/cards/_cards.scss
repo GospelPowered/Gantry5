@@ -1,0 +1,155 @@
+//......................Common Style........................
+.gp-cards {
+    padding: $content-padding 0;
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    p {
+        margin: 12px 0;
+        font-weight: 300;
+    }
+}
+
+.gp-cards-headline {
+    text-align: center;
+    padding-bottom: 5rem;
+    
+    h1 {
+        margin-bottom: 0;
+    }
+    
+    p {
+        margin-top: 0;
+    }
+}
+
+.gp-cards-website {
+    margin-bottom: 2px;
+    font-style: italic;
+    opacity: .8;
+}
+
+//......................Testimonials Style..................
+.gp-cards-testimonials {
+    .gp-cards-container {
+        @include display(flex);
+        @include flex-flow(row wrap);
+        justify-content: space-between;
+    }
+    
+    i {
+        float: left;
+        margin-right: 1rem;
+    }
+    
+    .gp-cards-item-image {
+        float: left;
+        margin-right: 1rem;
+        max-width: 20%;
+        border-radius: 50%;
+    }
+    
+    .gp-cards-wrap {
+        overflow: hidden;
+    }
+    
+    h2 {
+        margin-bottom: 2px;
+    }
+    
+    .gp-cards-item {
+        margin-bottom: 48px;
+        
+        @include breakpoint (desktop-only) {
+            width: 46%;
+        }
+    }
+}
+
+//...........................Style 1...................................
+.gp-cards-1 {
+    .gp-cards-container {
+        @include display(flex);
+        @include flex-flow(row wrap);
+        justify-content: center;
+        
+        @include breakpoint(desktop-only) {
+            @include flex-flow(row nowrap);
+        }
+    }
+    
+    .gp-cards-item {
+        border: 4px solid #ddd;
+        border-radius: 3px;
+        text-align: center;
+        padding: 1rem;
+        margin: 4px;
+        flex-grow: 1;
+        transition: all .2s;
+        
+        &:hover {
+            border-color: $accent-color-1;
+        }
+    }
+    
+    h2 {
+        margin-bottom: 10px;
+    }
+}
+
+//........................Style 2.....................................
+.gp-cards-2 {
+    .gp-cards-container {
+        @include display(flex);
+        @include flex-flow(row wrap);
+        justify-content: center;
+        
+        @include breakpoint(desktop-only) {
+            @include flex-flow(row nowrap);
+        }
+    }
+    
+    .gp-cards-item {
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    h2 {
+        margin-bottom: 10px;
+    }
+}
+
+//........................Style 3.....................................
+.gp-cards-3 {
+    .gp-cards-container {
+        @include display(flex);
+        @include flex-flow(row wrap);
+        justify-content: center;
+        
+        @include breakpoint(desktop-only) {
+            @include flex-flow(row nowrap);
+        }
+    }
+    
+    .gp-cards-item {
+        text-align: center;
+        padding: 1rem;
+        margin: 4px;
+        border: 4px solid #ddd;
+        border-radius: 3px;
+        flex-grow: 1;
+        transition: all .2s;
+        
+        &:hover {
+            background: $accent-color-2;
+            border-color: $accent-color-2;
+            color: $white;
+            
+            h2 {
+                color: $white !important;
+            }
+        }
+    }
+}
