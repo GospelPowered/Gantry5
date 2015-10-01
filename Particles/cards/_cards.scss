@@ -183,4 +183,10 @@
             }
         }
     }
+    
+    @include breakpoint(mobile-only) {
+        .gp-cards-item {
+            flex: 100%;
+        }
+    }
 }
