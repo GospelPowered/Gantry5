@@ -27,7 +27,7 @@ form:
     star:
       type: input.imagepicker
       label: Stars
-      default: 'gantry-theme://images/template/star.png'
+      default: ''
     
     items:
       type: collection.list
