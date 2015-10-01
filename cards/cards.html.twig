@@ -1,0 +1,35 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block particle %}
+    <div class="gp-cards {{ particle.style }}">
+        {% if particle.headline %}<div class="gp-cards-headline">{{ particle.headline|raw }}</div>{% endif %}
+        
+        <div class="gp-cards-container">
+            {% for item in particle.items %}
+            <div class="gp-cards-item">
+                
+                {% if item.icon %}<i class="{{ item.icon }}"></i>
+                {% elseif item.image %}<img class="gp-cards-item-image" src="{{ url(item.image) }}" alt="{{ item.title }}" />
+                {% endif %}
+                
+                <div class="gp-cards-wrap">
+                    {% if item.link %}<a href="{{ item.link }}" target="{{ item.target}}" title="{{ item.title }}" 
+                    {% if item.rel == '1' %}rel="nofollow"{% endif %}><h2>{{ item.title }}</h2></a>
+                    
+                    {% elseif item.title %}<h2>{{ item.title }}</h2>{% endif %}
+                    {% if item.website %}<div class="gp-cards-website">{{ item.website }}</div>{% endif %}
+                    {% if particle.star %}<div class="gp-cards-stars">
+                        <img src="{{ url(particle.star) }}">
+                        <img src="{{ url(particle.star) }}">
+                        <img src="{{ url(particle.star) }}">
+                        <img src="{{ url(particle.star) }}">
+                        <img src="{{ url(particle.star) }}">
+                    </div>{% endif %}
+                    {% if item.description %}<p>{{ item.description|raw }}</p>{% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+{% endblock %}
