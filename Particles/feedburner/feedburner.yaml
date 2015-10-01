@@ -1,0 +1,29 @@
+name: FeedBurner
+description: FeedBurner - Email Subscriptions
+type: particle
+
+form:
+  fields:
+    enabled:
+      type: input.checkbox
+      label: Enabled
+      description: Globally enable the particle.
+      default: true
+    
+    feed:
+      type: input.text
+      label: Feed
+      
+    headline:
+      type: input.text
+      label: Headline
+    
+    text:
+      type: textarea.textarea
+      label: Text
+      placeholder: Enter your email address
+    
+    button:
+      type: input.text
+      label: Button Text
+      default: SUBSCRIBE
