@@ -1,2 +1,1 @@
-# gantry-particles
-Gantry 5 Particles
+# Gantry 5 Particles
