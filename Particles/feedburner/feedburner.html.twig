@@ -1,15 +1,15 @@
 {% extends '@nucleus/partials/particle.html.twig' %}
 
 {% block particle %}
-    <div class="ai-feedburner">
+    <div class="gp-feedburner">
         {% if particle.headline %}<h3>{{ particle.headline|raw }}</h3>{% endif %}
         {% if particle.text %}<p>{{ particle.text|raw }}</p>{% endif %}
         
-        <form class="ai-feedburner-form" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri={{ particle.feed }}', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
-            <input type="text" name="email" placeholder="Emai Address" class="ai-feedburner-input">
+        <form class="gp-feedburner-form" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri={{ particle.feed }}', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+            <input type="text" name="email" placeholder="Emai Address" class="gp-feedburner-input">
             <input type="hidden" value="{{ particle.feed }}" name="uri">
             <input type="hidden" name="loc" value="en_US">
-            <input type="submit" name="submit" value="{{ particle.button }}" class="button ai-feedburner-button">
+            <input type="submit" name="submit" value="{{ particle.button }}" class="button gp-feedburner-button">
         </form>
     </div>
 {% endblock %}
