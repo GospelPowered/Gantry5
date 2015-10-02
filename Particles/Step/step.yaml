@@ -1,0 +1,67 @@
+name: Step
+description:
+type: particle
+
+form:
+  fields:
+    enabled:
+      type: input.checkbox
+      label: Enabled
+      description: Globally enable the particle.
+      default: true
+      
+    headline:
+      type: input.text
+      label: Headline
+      
+    subtitle:
+      type: textarea.textarea
+      label: Subtitle
+      
+    tab1:
+      type: input.text
+      label: Tab 1 Title
+    
+    items:
+      type: collection.list
+      label: Tab 1
+      array: true
+      ajax: true
+      value: title
+      
+      fields:
+        .count:
+          type: input.text
+          label: Step Count
+          
+        .headline:
+          type: input.text
+          label: Headline
+          
+        .description:
+          type: textarea.textarea
+          label: Description
+          
+    tab2:
+      type: input.text
+      label: Tab 2 Title
+      
+    samples:
+      type: collection.list
+      label: Tab 2
+      array: true
+      ajax: true
+      value: title
+      
+      fields:
+        .count:
+          type: input.text
+          label: Step Count
+          
+        .headline:
+          type: input.text
+          label: Headline
+          
+        .description:
+          type: textarea.textarea
+          label: Description

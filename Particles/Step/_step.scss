@@ -1,0 +1,38 @@
+.gp-step-header {
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.gp-step-count {
+    background: $accent-color-1;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 24px 36px;
+    height: 90px;
+    width: 90px;
+    line-height: 90px;
+    
+    &:after {
+        background: url("gantry-theme://images/swipe-right.png");
+        position: absolute;
+        content: "";
+        top: 35px;
+        right: 0;
+        width: 50px;
+        height: 50px;
+        @include breakpoint(mobile-only) {
+            display: none;
+        }
+    }
+}
+
+.gp-step-item {
+    text-align: center;
+    position: relative;
+    
+    &:last-child .gp-step-count:after {
+        content: none;
+    }
+}
