@@ -1,0 +1,15 @@
+name: AddThis
+description: AddThis Social Share
+type: atom
+
+form:
+  fields:
+    enabled:
+      type: input.checkbox
+      label: Enabled
+      description: Globally enable the atom.
+      default: true
+      
+    id:
+      type: input.text
+      label: Id
