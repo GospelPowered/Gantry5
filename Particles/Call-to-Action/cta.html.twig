@@ -1,0 +1,10 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block particle %}
+    <div class="gp-cta">
+        <a href="{{ particle.link }}" target="{{ particle.target }}" class="{{ particle.css }}">
+            <i class="{{ particle.icon }}"></i>
+            {{ particle.text }}
+        </a>
+    </div>
+{% endblock %}
