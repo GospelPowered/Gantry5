@@ -1,0 +1,36 @@
+name: List
+description: Displays an HTML list
+type: particle
+icon: fa-list
+
+form:
+  fields:
+    enabled:
+      type: input.checkbox
+      label: Enableds
+      description: Globally enable the particle.
+      default: true
+    
+    headline:
+      type: input.text
+      label: Headline
+    
+    items:
+      type: collection.list
+      array: true
+      ajax: true
+      value: title
+      label: List Item
+      
+      fields:
+        .link:
+          type: input.text
+          label: Link
+        
+        .target:
+          type: select.selectize
+          label: Target
+          default: _self
+          options:
+            _blank: New Window
+            _self: Self

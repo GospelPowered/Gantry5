@@ -1,0 +1,53 @@
+name: Team
+description: Team
+type: particle
+icon: fa-user
+
+form:
+  fields:
+    enabled:
+      type: input.checkbox
+      label: Enabled
+      description: Globally enable the particle.
+      default: true
+    
+    image:
+      type: input.imagepicker
+      label: Image
+      
+    name: 
+      type: input.text
+      label: Name
+      
+    desc: 
+      type: textarea.textarea
+      label: Description
+    
+    items:
+      type: collection.list
+      label: Items
+      ajax: true
+      array: true
+      value: title
+      fields:
+       
+        .icon:
+          type: input.icon
+          label: Icon
+        
+        .text: 
+          type: input.text
+          label: Text
+          
+        .url:
+          type: input.text
+          label: Url
+        
+        .target:
+          type: select.selectize
+          label: Target
+          default: _blank
+          options:
+            _self: Self
+            _blank: New Window
+          

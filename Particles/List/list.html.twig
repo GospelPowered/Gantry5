@@ -1,0 +1,15 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block particle %}
+    <div class="gp-list">
+        {% if particle.headline %}<h4>{{ particle.headline }}</h4>{% endif %}
+        <ul>
+            {% for item in particle.items %}
+                <li>
+                    {% if item.link %}<a href="{{ item.link }}" target="{{ item.target }}"><span>{{ item.title }}</span></a>
+                    {% else %}<span>{{ item.title }}</span>{% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

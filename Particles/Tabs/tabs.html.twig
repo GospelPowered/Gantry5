@@ -1,0 +1,26 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block particle %}
+    <section class="gp-tabs {{ particle.css }}">
+        <nav role="navigation">
+            <ul>
+                {% for item in particle.tabs %}
+                    <li><a href="#tab-{{ loop.index }}">
+                        {% if item.icon %}<i class="{{ item.icon }}"></i>{% endif %}
+                        <span>{{ item.title }}</span>
+                    </a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+        <div class="content">
+            {% for item in particle.tabs %}
+                <section id="#tab-{{ loop.index }}"><p>{{ item.desc|raw }}</p></section>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascript_footer %}
+    {{ parent() }}
+    <script src="{{ url('gantry-theme://js/tabs.js') }}"></script>
+{% endblock %}

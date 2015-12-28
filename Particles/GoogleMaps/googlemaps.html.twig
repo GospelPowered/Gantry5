@@ -1,0 +1,19 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block particle %}
+    <div class="gp-google-maps">
+        <div id="gp-google-maps"></div>
+        {% if particle.desc %}<div class="gp-google-maps-desc">{{ particle.desc|raw }}</div>{% endif %}
+    </div>
+    
+    {% assets with { priority: 5 } %}
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+        <script src="{{ url("gantry-theme://js/googlemaps.js") }}"></script>
+        <script>
+            var LatLng = {lat:{{ particle.lat|e }}, lng:{{ particle.lng|e }}};
+            var zoom = {{ particle.zoom|e }};
+            var sw = {% if particle.sw == 0 %}false{% else %}true{% endif %};
+        </script>
+    {% endassets %}
+
+{% endblock %}

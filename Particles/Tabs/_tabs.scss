@@ -1,0 +1,99 @@
+.gp-tabs {
+    position: relative;
+    overflow: hidden;
+    font-weight: 300;
+    nav {
+        text-align: center;
+        text-transform: uppercase;
+        ul {
+            position: relative;
+            @include display(flex);
+            @include flex-flow(row wrap);
+            @include box-orient(horizontal);
+            @include box-pack(center);
+            @include justify-content(center);
+            list-style: none;
+            margin: 0 auto;
+            li {
+                position: relative;
+                z-index: 1;
+                display: block;
+                @include flex(1);
+                text-align: center;
+            }
+        }
+        a {
+            position: relative;
+            white-space: nowrap;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 1rem 0;
+            &:focus {
+                outline: none;
+            }
+        }
+        i, span {
+            vertical-align: middle;
+        }
+        i {
+            margin-right: .8rem;
+        }
+        span {
+            font-size: 1.25rem;
+        }
+    }
+    
+    .content {
+        position: relative;
+        font-size: 1.25rem;
+        section {
+            display: none;
+            text-align: center;
+            padding: 2rem 1rem;
+            &.active {
+                display: block;
+            }
+            p {
+                margin: 0;
+            }
+        }
+    }
+    
+    @include breakpoint(small-mobile-range) {
+        i {
+            display: none;
+        }
+        nav, span {
+            font-size: .8rem !important;
+        }
+    }
+}
+
+.gp-tabs-default {
+    nav ul li {
+        border-bottom: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        &:first-child {
+            border-left: 1px solid #ddd;
+        }
+    }
+    nav ul li.active {
+        border-bottom: 1px solid transparent;
+        border-top: 1px solid $accent-color-1;
+        &:before {
+            content: "";
+            width: 100%;
+            height: 2px;
+            top: 0;
+            left: 0;
+            position: absolute;
+            background: $accent-color-1;
+        }
+    }
+    .content {
+        margin-top: 1rem;
+        border-top: 1px solid #ddd;
+    }
+}

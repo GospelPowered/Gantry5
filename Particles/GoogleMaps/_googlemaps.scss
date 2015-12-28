@@ -1,0 +1,24 @@
+#gp-google-maps {
+    width: 100%;
+    height: 300px;
+    background: #ddd;
+}
+
+.gp-google-maps-desc {
+    background: #283040;
+    color: $white;
+    text-align: center;
+    padding: 2rem;
+    
+    h1, h2, h3, h4, h5 {
+        color: $white;
+        margin: 0;
+        padding-bottom: .4rem;
+    }
+    p {
+        margin: 0;
+    }
+    .g-block {
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,30 @@
+name: Simple Image
+description: Displays Sample Content
+type: particle
+
+form:
+  fields:
+    enabled:
+      type: input.checkbox
+      label: Enabled
+      description: Globally enable the particle.
+      default: true
+
+    image:
+      type: input.imagepicker
+      label: Image
+      description: Select the main image.
+    
+    link:
+      type: input.text
+      label: Link
+      description: Image Link
+    
+    target:
+      type: select.selectize
+      label: Target
+      description: Link Target
+      default: _self
+      options:
+        _self: Self
+        _blank: New Window

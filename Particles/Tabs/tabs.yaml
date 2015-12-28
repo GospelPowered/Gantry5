@@ -1,0 +1,32 @@
+name: Tabs
+description: Tabs
+type: particle
+icon: fa-sliders
+
+form:
+  fields:
+    enabled:
+      type: input.checkbox
+      label: Enabled
+      description: Globally enable logo particles.
+      default: true
+    
+    tabs:
+      type: collection.list
+      label: Tabs
+      array: true
+      ajax: true
+      value: title
+      fields:
+      
+        .icon:
+          type: input.icon
+          label: Icon
+        .desc: 
+          type: textarea.textarea
+          label: Description
+    
+    css:
+      type: input.selectize
+      label: CSS
+      default: gp-tabs-default

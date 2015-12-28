@@ -1,0 +1,23 @@
+.gp-feedburner-input {
+    height: 40px;
+    margin-bottom: .2rem;
+    vertical-align: top;
+}
+.gp-feedburner-button {
+    height: 40px;
+}
+
+@include breakpoint(mobile-only) {
+    .gp-feedburner-button, .gp-feedburner-input {
+        width: 100%;
+    }
+}
+
+#g-navigation, #g-header {
+    .gp-feedburner-input {
+        margin-bottom: 0;
+    }
+    .gp-feedburner {
+        text-align: center;
+    }
+}

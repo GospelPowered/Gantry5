@@ -1,0 +1,50 @@
+name: Heading
+description: Heading
+type: particle
+icon: fa-header
+
+form:
+  fields:
+    enabled:
+      type: input.checkbox
+      label: Enabled
+      description: Globally enable to the particles.
+      default: true
+      
+    head:
+      type: input.text
+      label: Headline
+      
+    sub: 
+      type: input.text
+      label: Subtitle
+    
+    img:
+      type: input.imagepicker
+      label: Image
+      
+    items:
+      type: collection.list
+      label: Description Items
+      array: true
+      ajax: true
+      value: title
+      fields:
+        
+        .icon:
+          type: input.icon
+          label: Icon
+          
+    url:
+      type: input.text
+      label: Url
+      
+    btn:
+      type: input.text
+      label: Button
+      default: Read More
+    
+    bcss:
+      type: input.selectize
+      lable: Button Css
+      default: gp-heading-button
