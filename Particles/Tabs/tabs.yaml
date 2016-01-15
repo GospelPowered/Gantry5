@@ -10,6 +10,19 @@ form:
       label: Enabled
       description: Globally enable logo particles.
       default: true
+      
+    st:
+      type: select.selectize
+      label: Style
+      default: border
+      options:
+        border: Border
+        bar: Bar
+        circle: Circle
+        iconbox: Icon Box
+        iconfall: Icon Fall
+        topline: Topline
+        triangleline: Triangle Line
     
     tabs:
       type: collection.list
@@ -25,8 +38,3 @@ form:
         .desc: 
           type: textarea.textarea
           label: Description
-    
-    css:
-      type: input.selectize
-      label: CSS
-      default: gp-tabs-default

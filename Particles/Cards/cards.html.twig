@@ -13,8 +13,7 @@
                 {% endif %}
                 
                 <div class="gp-cards-wrap">
-                    {% if item.link %}<a href="{{ item.link }}" target="{{ item.target}}" title="{{ item.title }}" 
-                    {% if item.rel == '1' %}rel="nofollow"{% endif %}><h2>{{ item.title }}</h2></a>
+                    {% if item.link %}<a href="{{ item.link }}" target="{{ item.target}}" title="{{ item.title }}"><h2>{{ item.title }}</h2></a>{% endif %}
                     
                     {% elseif item.title %}<h2>{{ item.title }}</h2>{% endif %}
                     {% if item.website %}<div class="gp-cards-website">{{ item.website }}</div>{% endif %}

@@ -60,8 +60,3 @@ form:
           options:
             _self: Self
             _blank: New Window
-        
-        .rel:
-          type: enable.enable
-          label: No Follow
-          default: '0'
