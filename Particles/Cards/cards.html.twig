@@ -5,7 +5,7 @@
         {% if particle.headline %}<div class="gp-cards-headline">{{ particle.headline|raw }}</div>{% endif %}
         
         <div class="gp-cards-container">
-            {% for item in particle.items %}
+            {% if particle.items %}{% for item in particle.items %}
             <div class="gp-cards-item">
                 
                 {% if item.icon %}<i class="{{ item.icon }}"></i>
@@ -20,7 +20,7 @@
                     {% if item.description %}<p>{{ item.description|raw }}</p>{% endif %}
                 </div>
             </div>
-            {% endfor %}
+            {% endfor %}{% endif %}
         </div>
         
     </div>
