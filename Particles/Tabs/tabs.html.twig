@@ -4,22 +4,22 @@
     <section class="gp-tabs {{ particle.st }}">
         <nav role="navigation">
             <ul>
-                {% for item in particle.tabs %}
+                {% if particle.tabs %}{% for item in particle.tabs %}
                     <li>
                         <a href="#tab-{{ loop.index }}">
                             {% if item.icon %}<i class="{{ item.icon }}"></i>{% endif %}
                             <span>{{ item.title }}</span>
                         </a>
                     </li>
-                {% endfor %}
+                {% endfor %}{% endif %}
             </ul>
         </nav>
         <div class="content">
-            {% for item in particle.tabs %}
+            {% if particle.tabs %}{% for item in particle.tabs %}
                 <section id="#tab-{{ loop.index }}">
                     {% if item.desc %}<p>{{ item.desc|raw }}</p>{% endif %}
                 </section>
-            {% endfor %}
+            {% endfor %}{% endif %}
         </div>
     </section>
 {% endblock %}
