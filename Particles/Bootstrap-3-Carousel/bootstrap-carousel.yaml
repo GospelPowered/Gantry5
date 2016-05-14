@@ -1,0 +1,48 @@
+name: GP Bootstrap Carousel
+description: Bootstrap Carousel
+type: particle
+icon: fa-sliders
+
+form:
+  fields:
+    enabled:
+      type: input.checkbox
+      label: Enabled
+      description: Globally enable the particle.
+      default: true
+    
+    items:
+      type: collection.list 
+      label: Items
+      array: true
+      ajax: true
+      value: title
+      fields:
+        
+        .image:
+          type: input.imagepicker
+          label: Image
+        .desc:
+          type: textarea.textarea
+          label: Description
+      
+    height:
+      type: input.text
+      label: Max Height
+      default: "300px"
+    
+    caption:
+      type: enable.enable
+      label: Caption
+      default: 1
+    
+    id:
+      type: input.text
+      label: Unique ID
+      description: Enter an unique ID for each instance
+      default: "gp-bootstrap-carousel"
+      
+    interval:
+      type: input.text
+      label: Interval
+      default: 2000
