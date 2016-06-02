@@ -2,9 +2,9 @@
 
 {% block particle %}
 
-    {% set id = particle.id|default('gp-bootstrap-carousel') %}
+    {% set id = particle.id|default('gp-carousel-1') %}
     
-    <div id="{{ id }}" class="carousel slide" data-ride="carousel">
+    <div id="{{ id }}" class="gp-bootstrap-carousel carousel slide" data-ride="carousel">
         
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -48,7 +48,8 @@
     <script>
         jQuery(function($) {
             $('.carousel').carousel ({
-                interval: {{ particle.interval }}
+                interval: {{ particle.interval }},
+                wrap: {{ particle.wrap }}
             })
         });
     </script>
