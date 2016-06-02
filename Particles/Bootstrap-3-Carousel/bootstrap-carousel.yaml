@@ -1,4 +1,4 @@
-name: GP Bootstrap Carousel
+name: Bootstrap Carousel
 description: Bootstrap Carousel
 type: particle
 icon: fa-sliders
@@ -40,9 +40,17 @@ form:
       type: input.text
       label: Unique ID
       description: Enter an unique ID for each instance
-      default: "gp-bootstrap-carousel"
+      default: "gp-carousel-1"
       
     interval:
       type: input.text
       label: Interval
       default: 2000
+    
+    wrap:
+      type: select.select
+      label: Wrap
+      default: 'true'
+      options:
+        'true' : 'True'
+        'false' : 'False'
