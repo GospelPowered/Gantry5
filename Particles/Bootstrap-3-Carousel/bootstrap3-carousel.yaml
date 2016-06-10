@@ -1,5 +1,5 @@
-name: Bootstrap Carousel
-description: Bootstrap Carousel
+name: Bootstrap 3 Carousel
+description: Bootstrap 3 Carousel
 type: particle
 icon: fa-sliders
 
@@ -11,9 +11,9 @@ form:
       description: Globally enable the particle.
       default: true
     
-    items:
+    slides:
       type: collection.list 
-      label: Items
+      label: Slides
       array: true
       ajax: true
       value: title

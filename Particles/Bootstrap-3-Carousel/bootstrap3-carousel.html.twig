@@ -4,11 +4,11 @@
 
     {% set id = particle.id|default('gp-carousel-1') %}
     
-    <div id="{{ id }}" class="gp-bootstrap-carousel carousel slide" data-ride="carousel">
+    <div id="{{ id }}" class="gp-bootstrap3-carousel carousel slide" data-ride="carousel">
         
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            {% for item in particle.items %}
+            {% for slide in particle.slides %}
                 {% if loop.first %}{% set active = "active" %}{% else %}{% set active = '' %}{% endif %}
                 <li data-target="#{{ id }}" data-slide-to="{{ loop.index0 }}" class="{{ active }}"></li>
             {% endfor %}
@@ -16,14 +16,14 @@
         
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            {% for item in particle.items %}
+            {% for slide in particle.slides %}
                 {% if loop.first %}{% set active = "active" %}{% else %}{% set active = '' %}{% endif %}
                 <div class="item {{ active }}">
-                    {% if item.image %}<img src="{{ url(item.image) }}" alt="{{ item.title }}" style="max-height: {{ particle.height }}" />{% endif %}
+                    {% if slide.image %}<img src="{{ url(slide.image) }}" alt="{{ slide.title }}" style="max-height: {{ particle.height }}" />{% endif %}
                     {% if particle.caption == 1 %}
                         <div class="carousel-caption">
-                            <h3>{{ item.title }}</h3>
-                            {% if item.desc %}<p>{{ item.desc|raw }}</p>{% endif %}
+                            <h3>{{ slide.title }}</h3>
+                            {% if slide.desc %}<p>{{ slide.desc|raw }}</p>{% endif %}
                         </div>
                     {% endif %}
                 </div>
