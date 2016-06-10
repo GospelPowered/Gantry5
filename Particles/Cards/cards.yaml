@@ -1,6 +1,7 @@
 name: Cards
 description: 
 type: particle
+icon: fa-th
 
 form:
   fields:
@@ -13,16 +14,54 @@ form:
     style:
       type: select.selectize
       label: Particle Style
-      default: gp-cards-testimonials
+      default: 1
       options:
-        gp-cards-testimonials: Testimonials
-        gp-cards-1: Style 1
-        gp-cards-2: Style 2
-        gp-cards-3: Style 3
-      
-    headline:
+        1: Style 1
+        2: Style 2
+        3: Style 3
+    
+    header_align:
+      type: select.select
+      label: Align Header
+      default: center
+      options:
+        left: Left
+        center: Center
+
+    heading_tag:
+      type: select.select
+      label: Heading Tag
+      description:
+      default: h2
+      options:
+        h1: H1
+        h2: H2
+        h3: H3
+        h4: H4
+        h5: H5
+        h6: H6
+
+    title:
+      type: input.text
+      label: Title
+
+    desc:
       type: textarea.textarea
-      label: Headline
+      label: Description
+
+    cols:
+      type: input.number
+      label: Columns
+      default: 3
+      min: 1
+    
+    text_align:
+      type: select.select
+      label: Align Text
+      default: left
+      options:
+        left: Left
+        center: Center
     
     items:
       type: collection.list
@@ -31,28 +70,16 @@ form:
       description: Create each item to appear in the content row.
       value: title
       ajax: true
-
       fields:
-        .icon:
-          type: input.icon
-          label: Icon
-        
         .image:
           type: input.imagepicker
           label: Image
-
-        .website:
-          type: input.text
-          label: Website
-        
-        .description:
+        .desc:
           type: textarea.textarea
           label: Description
-        
         .link:
           type: input.text
           label: Link
-          
         .target:
           type: select.selectize
           label: Link Target
@@ -60,3 +87,48 @@ form:
           options:
             _self: Self
             _blank: New Window
+        .socials:
+          type: collection.list
+          label: Social Links
+          array: true
+          ajax: true
+          value: title
+          fields:
+            .sicon:
+              type: input.icon
+              label: Icon
+            .slink:
+              type: input.text
+              label: Link
+            .starget:
+              type: select.select
+              label: Target
+              default: _self
+              options:
+                _self: Self
+                _blank: New Window
+        
+    more_link:
+      type: input.text
+      label: Read More Link
+      description: Specify the link.
+
+    more_label:
+      type: input.text
+      label: Read More Label
+      default: "Read More"
+
+    more_target:
+      type: select.select
+      label: Read More Target
+      description: Target browser window when item is clicked.
+      default: _self
+      options:
+        _blank: New window
+        _self: Self
+
+    more_css:
+      type: input.selectize
+      label: Read More CSS
+      description: CSS class names for the button.
+      default: "gp-particle-button"

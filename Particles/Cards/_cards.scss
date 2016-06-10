@@ -1,156 +1,97 @@
-//......................Common Style........................
 .gp-cards {
-    padding: $content-padding 0;
     
-    h2 {
-        font-size: 1.4rem;
+    .gp-particle-header {
+        margin-bottom: 3rem;
+        p {
+            opacity: .87;
+        }
     }
     
-    p {
-        margin: 12px 0;
-        font-weight: 300;
+    .gp-center {
+        text-align: center;
     }
-}
+    
+    .gp-left {
+        text-align: left;
+    }
+    
+    .gp-particle-rm {
+        margin-top: 3rem;
+        display: block;
+        text-align: center;
+    }
 
-.gp-cards-headline {
-    text-align: center;
-    padding-bottom: 5rem;
-    
-    h1 {
-        margin-bottom: 0;
+    .gp-particle-button {
+        color: inherit;
+        text-decoration: underline;
+        &:hover {
+            color: $accent-color-1;
+        }
     }
     
-    p {
-        margin-top: 0;
-    }
-}
-
-.gp-cards-website {
-    margin-bottom: 2px;
-    font-style: italic;
-    opacity: .8;
-}
-
-//......................Testimonials Style..................
-.gp-cards-testimonials {
-    .gp-cards-container {
-        @include display(flex);
-        @include flex-flow(row wrap);
-        justify-content: space-between;
-    }
-    
-    i {
-        float: left;
-        margin-right: 1rem;
-    }
-    
-    .gp-cards-item-image {
-        float: left;
-        margin-right: 1rem;
-        max-width: 20%;
-        border-radius: 50%;
-    }
-    
-    .gp-cards-wrap {
+    .gp-cards-image {
+        text-align: center;
         overflow: hidden;
     }
     
-    h2 {
-        margin-bottom: 2px;
+    .gp-cards-title {
         margin-top: 0;
-    }
-    
-    .gp-cards-item {
-        margin-bottom: 48px;
-        
-        @include breakpoint (desktop-only) {
-            width: 46%;
-        }
-    }
-}
-
-//...........................Style 1...................................
-.gp-cards-1 {
-    .gp-cards-container {
-        @include display(flex);
-        @include flex-flow(row wrap);
-        justify-content: center;
-        
-        @include breakpoint(desktop-only) {
-            @include flex-flow(row nowrap);
-        }
-    }
-    
-    .gp-cards-item {
-        border: 4px solid #ddd;
-        border-radius: 3px;
-        text-align: center;
-        padding: 1rem;
-        margin: 4px;
-        flex-grow: 1;
-        transition: all .2s;
-        
-        &:hover {
-            border-color: $accent-color-1;
-        }
-    }
-    
-    h2 {
-        margin-bottom: 10px;
-    }
-}
-
-//........................Style 2.....................................
-.gp-cards-2 {
-    .gp-cards-container {
-        @include display(flex);
-        @include flex-flow(row wrap);
-        justify-content: center;
-        
-        @include breakpoint(desktop-only) {
-            @include flex-flow(row nowrap);
-        }
-    }
-    
-    .gp-cards-item {
-        text-align: center;
-        padding: 1rem;
-    }
-    
-    h2 {
-        margin-bottom: 10px;
-    }
-}
-
-//........................Style 3.....................................
-.gp-cards-3 {
-    .gp-cards-container {
-        @include display(flex);
-        @include flex-flow(row wrap);
-        justify-content: center;
-        
-        @include breakpoint(desktop-only) {
-            @include flex-flow(row nowrap);
-        }
-    }
-    
-    .gp-cards-item {
-        text-align: center;
-        padding: 1rem;
-        margin: 4px;
-        border: 4px solid #ddd;
-        border-radius: 3px;
-        flex-grow: 1;
-        transition: all .2s;
-        
-        &:hover {
-            background: $accent-color-2;
-            border-color: $accent-color-2;
-            color: $white;
-            
-            h2 {
-                color: $white !important;
+        a {
+            color: inherit;
+            &:hover {
+                color: $accent-color-1;
             }
         }
     }
+    
+    .gp-cards-wrapper {
+        > p {
+            margin-bottom: 0;
+        }
+    }
+    
+    .gp-cards-social {
+        margin-top: 1.5rem;
+        a {
+            padding: 0 .2rem;
+        }
+    }
+    
+    &.gp-style-1 {
+        > .g-grid {
+            margin-left: -($content-margin + $content-padding);
+            margin-right: -($content-margin + $content-padding);
+        }
+        .gp-cards-wrapper {
+            padding-top: 1.5rem;
+        }
+    }
+    
+    &.gp-style-2 {
+        > .g-grid {
+            margin-right: -$content-margin;
+            margin-left: -$content-margin;
+        }
+        .g-content {
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, .1);
+        }
+        .gp-cards-wrapper {
+            padding-top: 1.5rem;
+        }
+    }
+    
+    &.gp-style-3 {
+        > .g-grid {
+            margin-right: -$content-margin;
+            margin-left: -$content-margin;
+        }
+        .g-content {
+            padding: 0;
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, .1);
+        }
+        .gp-cards-wrapper {
+            padding: 1.5rem;
+        }
+    }
+    
 }

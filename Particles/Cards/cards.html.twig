@@ -1,26 +1,54 @@
 {% extends '@nucleus/partials/particle.html.twig' %}
 
 {% block particle %}
-    <div class="gp-cards {{ particle.style }}">
-        {% if particle.headline %}<div class="gp-cards-headline">{{ particle.headline|raw }}</div>{% endif %}
+
+    {% set col = 100 / particle.cols|default('3') %}
+    {% set size = col|number_format(1, '-')|replace({"-0" : ""}) %}
+    
+    <div class="gp-cards gp-style-{{ particle.style }}">
         
-        <div class="gp-cards-container">
-            {% if particle.items %}{% for item in particle.items %}
-            <div class="gp-cards-item">
-                
-                {% if item.icon %}<i class="{{ item.icon }}"></i>
-                {% elseif item.image %}<img class="gp-cards-item-image" src="{{ url(item.image) }}" alt="{{ item.title }}" />
-                {% endif %}
-                
-                <div class="gp-cards-wrap">
-                    {% if item.link and item.title %}<a href="{{ item.link }}" target="{{ item.target}}" title="{{ item.title }}"><h2>{{ item.title }}</h2></a>
-                    {% elseif item.title %}<h2>{{ item.title }}</h2>{% endif %}
-                    {% if item.website %}<div class="gp-cards-website">{{ item.website }}</div>{% endif %}
-                    {% if item.description %}<p>{{ item.description|raw }}</p>{% endif %}
+        {% if particle.title or particle.desc %}
+        <div class="gp-particle-header gp-{{ particle.header_align }}">
+            {% if particle.title %}<{{ particle.heading_tag }} class="g-title">
+                <span>{{ particle.title|raw }}</span>
+            </{{ particle.heading_tag }}>{% endif %}
+            {% if particle.desc %}<p>{{ particle.desc|raw|nl2br }}</p>{% endif %}
+        </div>
+        {% endif %}
+        
+        {% if particle.items %}
+        <div class="g-grid">
+            {% for item in particle.items %}
+            
+            <div class="g-block equal-height size-{{ size }}">
+                <div class="g-content">
+                    {% if item.image or item.icon %}
+                    <div class="gp-cards-image">
+                        {% if item.image %}<img src="{{ url(item.image) }}" alt="{{ item.title }}"/>{% endif %}
+                    </div>
+                    {% endif %}
+                    <div class="gp-cards-wrapper gp-{{ particle.text_align }}">
+                        {% if item.link %}
+                        <h4 class="gp-cards-title"><a href="{{ item.link }}" title="{{ item.title }}" target="{{ item.target }}">{{ item.title }}</a></h4>
+                        {% else %}<h4 class="gp-cards-title">{{ item.title }}</h4>{% endif %}
+                        {% if item.desc %}<p>{{ item.desc|raw }}</p>{% endif %}
+                        {% if item.socials %}
+                        <div class="gp-cards-social">
+                            {% for social in item.socials %}
+                            <a href="{{ social.slink }}" target="{{ social.starget }}" title="{{ social.title }}"><i class="{{ social.sicon }}"></i></a>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
-            {% endfor %}{% endif %}
+            
+            {% endfor %}
         </div>
+        {% endif %}
+        
+        {% if particle.more_link %}<div class="gp-particle-rm"><a class="{{ particle.more_css }}" href="{{ particle.more_link }}" target="{{ particle.more_target }}">{{ particle.more_label }}</a></div>{% endif %}
         
     </div>
+    
 {% endblock %}
