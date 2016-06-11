@@ -22,7 +22,7 @@
                 text-align: center;
                 a {
                     position: relative;
-                    padding: 1rem 0;
+                    padding: 1rem .4rem;
                     white-space: nowrap;
                     display: block;
                     text-overflow: ellipsis;
@@ -72,15 +72,17 @@
 .gp-tabs.border {
     nav {
         margin: auto;
-        max-width: 40rem;
         ul {
             li {
                 a {
                     border: 1px solid $base-border-color;
                     border-bottom: 1px solid transparent;
-                    padding: .5rem 0;
+                    padding: .5rem;
                 }
                 margin: 0 .2rem;
+                @include breakpoint(no-desktop) {
+                    margin: .2rem;
+                }
                 &.active {
                     a {
                        border: 1px solid $accent-color-1;
@@ -256,74 +258,6 @@
     }
 }
 
-.gp-tabs.iconfall {
-    overflow: visible;
-    background: $white;
-    nav {
-        ul {
-            li {
-                &:before {
-                    position: absolute;
-                    bottom: -.2rem;
-                    left: 50%;
-                    margin-left: -20px;
-                    width: 40px;
-                    height: 4px;
-                    background: $accent-color-1;
-                    content: "";
-                    opacity: 0;
-                    @include transform(scale3d(0,1,1)); 
-                    @include transition(transform .2s ease-in);
-                }
-                &.active {
-                    &:before {
-                        opacity: 1;
-                        @include transform(scale3d(1,1,1));
-                    }
-                    a {
-                        color: $accent-color-1 !important;
-                    }
-                    i {
-                        opacity: 1;
-                        @include transform(translate3d(0,0,0));
-                    }
-                }
-                i {
-                    opacity: 0;
-                    @include transform(translate3d(0, -100px, 0));
-                    @include transition(transform .2s, opacity .2s);
-                }
-                a {
-                    display: inline-block;
-                    overflow: visible;
-                    padding: 2rem 0;
-                    color: $base-text-color !important;
-                    @include transition(color 0.3s cubic-bezier(0.7,0,0.3,1));
-                    &:hover {
-                        color: $accent-color-1 !important;
-                    }
-                }
-            }
-        }
-        i {
-            display: block;
-            width: 100%;
-            padding-bottom: 1rem;
-        }
-    }
-    
-    .content {
-        color: $base-text-color !important;
-    }
-    
-    @include breakpoint(small-mobile-range) {
-        nav ul li i {
-            opacity: 1;
-            @include transform(translate3d(0,0,0));
-        }
-    }
-}
-
 .gp-tabs.topline {
     nav {
         ul {
@@ -397,9 +331,6 @@
                     }
                 }
             }
-        }
-        i {
-            display: none;
         }
     }
     .content {
