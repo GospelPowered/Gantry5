@@ -1,0 +1,22 @@
+name: Title
+description: Display Title
+type: particle
+icon: fa-header
+
+form:
+  fields:
+    enabled:
+      type: input.checkbox
+      label: Enabled
+      description: Globally enable the particle.
+      default: true
+    
+    h:
+      type: select.select
+      label: Heading
+      default: h1
+      options:
+        h1: H1
+        h2: H2
+        h3: H3
+        h4: H4
