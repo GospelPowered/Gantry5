@@ -1,0 +1,23 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block particle %}
+
+	<div class="gp-particle-wptitle">
+        <{{ particle.heading }} class="gp-headline">
+            {%- if function('is_category' ) -%}
+                {{ function('single_cat_title') }}
+            {%- elseif function('is_single' ) or function('is_page') -%}
+                {{ function('the_title') }}
+            {%- elseif function('is_post_type_archive') -%}
+                {{ function('post_type_archive_title') }}
+            {%- elseif function('is_tag') %}
+                {{ function('single_tag_title') }}
+            {%- elseif function('is_author') -%}
+                {{ function('get_the_author') }}
+            {%- elseif function('is_home') -%}
+                {{ particle.blog|default('Blog') }}
+            {%- endif -%}
+        </{{ particle.heading }}>
+	</div>
+
+{% endblock %}

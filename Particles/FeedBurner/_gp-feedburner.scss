@@ -1,0 +1,64 @@
+.gp-particle-feedburner {
+
+    .gp {
+        &-left {
+            text-align: left;
+        }
+        &-center {
+            text-align: center;
+        }
+        &-right {
+            text-align: right;
+        }
+    }
+
+    .gp-headline {
+        margin-top: 0;
+    }
+
+    .gp-description {
+        opacity: .87;
+    }
+    
+    .gp-input {
+        height: 40px;
+        margin-bottom: .2rem;
+        vertical-align: top;
+    }
+
+    .gp-button {
+        height: 40px;
+    }
+
+    &.gp-style {
+        &-color-1, &-color-2, &-base {
+            padding: 2.5rem;
+            color: white;
+        }
+
+        &-color-1 {
+            background: $accent-color-1;
+        }
+
+        &-color-2 {
+            background: $accent-color-2;
+        }
+
+        &-base {
+            background: $base-text-color;
+        }
+
+        &-border {
+            border: 2px solid $base-border-color;
+            padding: 2.5rem;
+        }
+    }
+
+    @include breakpoint(mobile-only) {
+        .gp {
+            &-button, &-input {
+                width: 100%;
+            }
+        }
+    }
+}

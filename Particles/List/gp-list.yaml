@@ -19,14 +19,19 @@ form:
       type: collection.list
       array: true
       ajax: true
-      value: title
+      value: name
       label: List Item
-      
       fields:
+
+        .icon:
+          type: input.icon
+          label: Icon
+        .title:
+          type: input.text
+          label: Title
         .link:
           type: input.text
-          label: Link
-        
+          label: Link       
         .target:
           type: select.selectize
           label: Target

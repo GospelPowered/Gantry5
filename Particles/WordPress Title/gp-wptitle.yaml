@@ -1,7 +1,7 @@
-name: Title
-description: Display Title
+name: WordPress Title
+description: Display Page / Post Title
 type: particle
-icon: fa-header
+icon: fa-wordpress
 
 form:
   fields:
@@ -11,12 +11,18 @@ form:
       description: Globally enable the particle.
       default: true
     
-    h:
+    heading:
       type: select.select
-      label: Heading
+      label: Heading Size
       default: h1
       options:
         h1: H1
         h2: H2
         h3: H3
         h4: H4
+    
+    blog:
+      type: input.text
+      label: Blog Title
+      default: Blog
+      placeholder: Blog

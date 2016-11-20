@@ -1,0 +1,17 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block particle %}
+    <div class="gp-particle-list">
+        {% if particle.headline %}<h4 class="gp-headline">{{ particle.headline }}</h4>{% endif %}
+        <ul>
+            {% if particle.items %}{% for item in particle.items %}
+                <li>
+                    {%- if item.link %}<a href="{{ item.link }}" target="{{ item.target }}" title="{{ item.title }}">{% endif -%}
+                        {% if item.icon %}<i class="{{ item.icon }}"></i>{% endif %}
+                        {% if item.title %}<span class="gp-title">{{ item.title|raw }}</span>{% endif %}
+                    {%- if item.link %}</a>{% endif -%}
+                </li>
+            {% endfor %}{% endif %}
+        </ul>
+    </div>
+{% endblock %}

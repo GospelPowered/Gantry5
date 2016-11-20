@@ -1,0 +1,15 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block particle %}
+    <div class="gp-particle-feedburner gp-{{ particle.align }} gp-style-{{ particle.style }}">
+        {% if particle.headline %}<{{ particle.heading }} class="gp-headline">{{ particle.headline|raw }}</{{ particle.heading }}>{% endif %}
+        {% if particle.description %}<p class="gp-description">{{ particle.description|raw }}</p>{% endif %}
+        
+        <form class="gp-form" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri={{ particle.feed }}', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+            <input type="text" name="email" placeholder="Emai Address" class="gp-input">
+            <input type="hidden" value="{{ particle.feed }}" name="uri">
+            <input type="hidden" name="loc" value="en_US">
+            <input type="submit" name="submit" value="{{ particle.label }}" class="{{ particle.button }} gp-button">
+        </form>
+    </div>
+{% endblock %}
